@@ -16,7 +16,7 @@ sc = SparkContext(conf = conf)
 
 nameDict = sc.broadcast(loadMovieNames())
 
-lines = sc.textFile("file:///SparkCourse/ml-100k/u.data")
+lines = sc.textFile("file:///Users/shivamnahar/SparkCourse/ml-100k/u.data")
 movies = lines.map(lambda x: (int(x.split()[1]), 1))
 movieCounts = movies.reduceByKey(lambda x, y: x + y)
 

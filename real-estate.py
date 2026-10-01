@@ -12,7 +12,7 @@ if __name__ == "__main__":
     
     # Load up data as dataframe
     data = spark.read.option("header", "true").option("inferSchema", "true")\
-        .csv("file:///SparkCourse/realestate.csv")
+        .csv("file:///Users/shivamnahar/SparkCourse/realestate.csv")
 
     assembler = VectorAssembler().setInputCols(["HouseAge", "DistanceToMRT", \
                                "NumberConvenienceStores"]).setOutputCol("features")

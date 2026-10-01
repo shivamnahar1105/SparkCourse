@@ -56,13 +56,13 @@ movieNames = spark.read \
       .option("sep", "|") \
       .option("charset", "ISO-8859-1") \
       .schema(movieNamesSchema) \
-      .csv("file:///SparkCourse/ml-100k/u.item")
+      .csv("file:///Users/shivamnahar/SparkCourse/ml-100k/u.item")
 
 # Load up movie data as dataset
 movies = spark.read \
       .option("sep", "\t") \
       .schema(moviesSchema) \
-      .csv("file:///SparkCourse/ml-100k/u.data")
+      .csv("file:///Users/shivamnahar/SparkCourse/ml-100k/u.data")
 
 
 ratings = movies.select("userId", "movieId", "rating")

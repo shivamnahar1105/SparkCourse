@@ -13,7 +13,7 @@ import codecs
 def loadMovieNames():
     movieNames = {}
     # CHANGE THIS TO THE PATH TO YOUR u.ITEM FILE:
-    with codecs.open("E:/SparkCourse/ml-100k/u.ITEM", "r", encoding='ISO-8859-1', errors='ignore') as f:
+    with codecs.open("/Users/shivamnahar/SparkCourse/ml-100k/u.ITEM", "r", encoding='ISO-8859-1', errors='ignore') as f:
         for line in f:
             fields = line.split('|')
             movieNames[int(fields[0])] = fields[1]
@@ -31,7 +31,7 @@ schema = StructType([ \
                      StructField("timestamp", LongType(), True)])
 
 # Load up movie data as dataframe
-moviesDF = spark.read.option("sep", "\t").schema(schema).csv("file:///SparkCourse/ml-100k/u.data")
+moviesDF = spark.read.option("sep", "\t").schema(schema).csv("file:///Users/shivamnahar/SparkCourse/ml-100k/u.data")
 
 movieCounts = moviesDF.groupBy("movieID").count()
 
